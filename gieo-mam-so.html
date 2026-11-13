@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gieo mầm số</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FBFFE3;--ink:#26300f;--ol:#7A8B3E;--ol2:#5E6F2A;--dk:#2F3A14;--li:#C5E063;--card:#fff;--ln:#dfe6bd;--soft:#f0f6cf;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#1b220e;--ink:#eef3d2;--ol2:#c5e063;--card:#26301a;--ln:#39461f;--soft:#222b14}}
+:root[data-theme=dark]{--bg:#1b220e;--ink:#eef3d2;--ol2:#c5e063;--card:#26301a;--ln:#39461f;--soft:#222b14}
+*{box-sizing:border-box}html{scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 Lexend,system-ui,sans-serif}
+h1,h2,h3{font-weight:800;line-height:1.2;margin:0 0 .5em;color:var(--ol2)}h2{font-size:1.7rem}
+a{color:inherit}.w{max-width:1080px;margin:0 auto;padding:0 5vw}
+header{position:sticky;top:0;z-index:9;background:var(--dk);box-shadow:0 2px 12px #0003}
+.hd{display:flex;align-items:center;justify-content:space-between;height:68px}
+.lg{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:1.2rem;text-decoration:none}
+.lg i{width:36px;height:36px;border-radius:10px;background:var(--li);display:grid;place-items:center;font-style:normal}
+nav>ul{display:flex;gap:4px;list-style:none;margin:0;padding:0}nav li{position:relative}
+nav>ul>li>a{display:block;color:#fff;text-decoration:none;padding:24px 14px;font-size:.95rem;border-bottom:3px solid transparent}
+nav>ul>li>a.on{border-color:var(--li)}nav>ul>li:hover>a{color:var(--li)}
+.dd{display:none;position:absolute;left:0;top:100%;min-width:250px;background:var(--card);border-radius:0 0 10px 10px;box-shadow:0 12px 28px #0003;list-style:none;margin:0;padding:8px}
+li:hover>.dd,li:focus-within>.dd{display:block}
+.dd a{display:block;padding:9px 12px;border-radius:6px;text-decoration:none;font-size:.9rem}.dd a:hover{background:var(--soft)}
+#mb{display:none;background:none;border:1px solid #fff6;color:#fff;border-radius:8px;font-size:1.3rem;padding:2px 10px}
+.v{display:none}.v.on{display:block}
+.hero{background:radial-gradient(circle at 80% 30%,#8a9c47,transparent 55%),linear-gradient(135deg,#2F3A14,#5E6F2A);color:#fff}
+.hero .w{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center;padding-top:56px;padding-bottom:56px}
+.hero h1{color:#fff;font-size:clamp(2rem,5vw,3.3rem)}.hero p{max-width:32em;opacity:.92}
+.btn{display:inline-block;background:var(--li);color:#1b220e;font:600 .95rem Lexend,sans-serif;text-decoration:none;padding:12px 22px;border-radius:999px;border:0;cursor:pointer;margin:6px 8px 0 0}
+.btn.o{background:none;color:#fff;border:1.5px solid #fff8}
+.st{background:var(--li);color:#1b220e}.st .w{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px;padding-top:16px;padding-bottom:16px;text-align:center}
+.st b{display:block;font-size:1.6rem;font-weight:800}.st span{font-size:.85rem}
+section.s{padding:48px 0}.alt{background:var(--soft)}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.c{background:var(--card);border:1px solid var(--ln);border-radius:14px;padding:20px}
+a.c{text-decoration:none;display:block;transition:transform .2s,box-shadow .2s}a.c:hover{transform:translateY(-3px);box-shadow:0 10px 24px #0002}
+.bd{width:52px;height:52px;border-radius:50%;background:var(--soft);display:grid;place-items:center;font-size:1.6rem;margin-bottom:12px}
+.c h3{font-size:1.05rem;color:var(--ol2)}.c p{margin:0;font-size:.92rem}
+.sp{display:flex;flex-wrap:wrap;gap:12px;align-items:stretch}.sp .c{flex:1 1 220px;position:relative;padding-top:34px}
+.sp .c b.nm{position:absolute;top:-16px;left:18px;width:36px;height:36px;border-radius:50%;background:var(--ol);color:#fff;display:grid;place-items:center}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.tabs button{font:inherit;font-size:.9rem;padding:9px 16px;border-radius:999px;border:1.5px solid var(--ol);background:none;color:var(--ol2);cursor:pointer}
+.tabs button.on{background:var(--ol);color:#fff}
+.ph{padding:40px 0 32px;background:var(--dk);color:#fff}.ph h1{color:#fff;margin:0}.ph p{margin:6px 0 0;opacity:.85}
+details.c{padding:0}details.c summary{list-style:none;cursor:pointer;padding:18px 20px}summary::-webkit-details-marker{display:none}
+details.c summary h3{margin:6px 0 10px}details.c[open] summary{border-bottom:1px solid var(--ln)}
+details.c summary:after{content:"Xem chi tiết ▾";font-size:.8rem;color:var(--ol)}details[open] summary:after{content:"Thu gọn ▴"}
+.k{display:inline-block;font-size:.78rem;font-weight:600;background:var(--li);color:#1b220e;border-radius:999px;padding:2px 10px}
+.ch{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}.ch em{font-style:normal;font-size:.8rem;background:var(--soft);border:1px solid var(--ln);border-radius:8px;padding:2px 8px}
+dl{margin:0;padding:16px 20px;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:.9rem}dt{font-weight:600;color:var(--ol2)}dd{margin:0}
+.t{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.9rem;min-width:480px}th,td{border-bottom:1px solid var(--ln);padding:9px 10px;text-align:left;vertical-align:top}th{color:var(--ol2)}
+.n{font-size:.85rem;opacity:.8}.fl svg{width:100%;height:auto;max-width:720px;display:block;margin:0 auto}
+.cta{background:linear-gradient(135deg,#5E6F2A,#7A8B3E);color:#fff;border-radius:18px;padding:36px;text-align:center}.cta h2{color:#fff}
+footer{background:var(--dk);color:#dfe8b5;padding-top:40px;font-size:.9rem}
+.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px}footer h4{color:#fff;margin:0 0 10px}
+footer a,footer button{display:block;color:#dfe8b5;background:none;border:0;font:inherit;padding:3px 0;text-decoration:none;cursor:pointer;text-align:left}footer a:hover,footer button:hover{color:var(--li)}
+.fb{border-top:1px solid #fff2;margin-top:28px;padding:16px 0;font-size:.8rem;opacity:.8}
+dialog{max-width:620px;width:92vw;border:0;border-radius:16px;padding:28px;background:var(--card);color:var(--ink)}dialog::backdrop{background:#0008}
+dialog h3{font-size:1.3rem}dialog li{margin:6px 0}dialog .x{float:right;background:none;border:0;font-size:1.6rem;cursor:pointer;color:var(--ink)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--li);outline-offset:2px}
+@media(max-width:820px){#mb{display:block}nav{display:none;position:absolute;left:0;right:0;top:68px;background:var(--dk);padding:8px 5vw 16px}nav.o{display:block}
+nav>ul{flex-direction:column}nav>ul>li>a{padding:12px 0}.dd{display:block;position:static;background:none;box-shadow:none;padding:0 0 0 12px}.dd a{color:#cfdc9a}
+.hero .w{grid-template-columns:1fr}.hero svg{max-width:300px;margin:0 auto}.fg{grid-template-columns:1fr}}
+</style></head><body>
+<header><div class="w hd"><a class="lg" href="#trang-chu"><i>🌱</i>Gieo mầm số</a><button id="mb" aria-label="Menu">☰</button><nav id="nav"></nav></div></header>
+
+<div class="v" id="trang-chu">
+<div class="hero"><div class="w"><div><h1>Vốn nhỏ trao tay, tương lai khởi sắc</h1><p>Nền tảng tài chính vi mô số do CEP và MoMo cùng triển khai: vay vốn, tiết kiệm và bảo hiểm cho hộ gia đình thu nhập thấp tại miền Nam, ngay trên điện thoại.</p><a class="btn" href="#dich-vu">Khám phá dịch vụ</a><a class="btn o" href="#mo-hinh">Mô hình hợp tác</a></div>
+<svg viewBox="0 0 320 300" aria-hidden="true"><circle cx="160" cy="150" r="130" fill="#ffffff14"/><rect x="95" y="60" width="130" height="220" rx="20" fill="#1b220e" stroke="#C5E063" stroke-width="4"/><rect x="108" y="82" width="104" height="170" rx="8" fill="#FBFFE3"/><path d="M160 235v-70" stroke="#5E6F2A" stroke-width="5" stroke-linecap="round"/><path d="M160 190c-32 0-40-28-40-28s34-6 40 28zM160 170c30 0 38-30 38-30s-34-4-38 30z" fill="#7A8B3E"/><circle cx="160" cy="118" r="22" fill="#C5E063" stroke="#5E6F2A" stroke-width="3"/><text x="160" y="126" text-anchor="middle" font-size="22" font-weight="800" fill="#2F3A14">₫</text><circle cx="62" cy="90" r="18" fill="#C5E063"/><circle cx="262" cy="200" r="24" fill="#C5E063" opacity=".8"/><circle cx="255" cy="70" r="9" fill="#fff" opacity=".6"/></svg></div></div>
+<div class="st"><div class="w"><div><b>4</b><span>nhóm khách hàng</span></div><div><b>3</b><span>nhóm sản phẩm: vay, tiết kiệm, bảo hiểm</span></div><div><b>100%</b><span>giải ngân và thanh toán qua ví MoMo</span></div><div><b>35+</b><span>năm kinh nghiệm của CEP</span></div></div></div>
+<section class="s"><div class="w"><h2>Dịch vụ cho từng nhóm khách hàng</h2><p class="n">Chọn nhóm của bạn để xem sản phẩm phù hợp.</p><div class="g" id="seg"></div></div></section>
+<section class="s alt"><div class="w"><h2>Bắt đầu thế nào</h2><br><div class="sp"><div class="c"><b class="nm">1</b><h3>Mở mini app CEP</h3><p>Ngay trong MoMo, xác thực e-KYC bằng CCCD gắn chip và khuôn mặt.</p></div><div class="c"><b class="nm">2</b><h3>CEP xét duyệt</h3><p>Cán bộ cộng đồng hỗ trợ hồ sơ; CEP thẩm định theo thu nhập, mùa vụ.</p></div><div class="c"><b class="nm">3</b><h3>Nhận vốn qua ví</h3><p>Giải ngân vào ví MoMo, theo dõi dư nợ và trả nợ trên cùng ứng dụng.</p></div></div></div></section>
+<section class="s"><div class="w"><div class="cta"><h2>Mỗi đồng vốn gieo xuống đều kiến tạo tương lai</h2><p>Lấy con người làm trọng tâm, kết hợp công nghệ với sự đồng hành của cán bộ tín dụng để không ai bị bỏ lại phía sau.</p><a class="btn" href="#lien-he">Liên hệ tư vấn</a></div></div></section>
+</div>
+
+<div class="v" id="dich-vu"><div class="ph"><div class="w"><h1>Dịch vụ</h1><p>Chọn nhóm khách hàng, bấm vào từng sản phẩm để xem chi tiết.</p></div></div>
+<section class="s"><div class="w"><div class="tabs" id="tabs"></div><div class="g" id="prod"></div><p class="n" id="note"></p></div></section></div>
+
+<div class="v" id="mo-hinh"><div class="ph"><div class="w"><h1>Mô hình hợp tác</h1><p>Đối tác chiến lược giữa CEP, MoMo và doanh nghiệp bảo hiểm.</p></div></div>
+<section class="s"><div class="w"><div class="fl"><svg viewBox="0 0 720 250" role="img" aria-label="Sơ đồ hợp tác"><g font-family="Lexend,sans-serif" text-anchor="middle"><g stroke="#7A8B3E" stroke-width="3" fill="none"><path d="M180 125H270M450 125H540"/><path d="M360 75V45H630V75" stroke-dasharray="6 5"/></g>
+<rect x="20" y="85" width="160" height="80" rx="16" fill="#C5E063"/><text x="100" y="120" font-weight="800" font-size="16" fill="#1b220e">Khách hàng</text><text x="100" y="142" font-size="12" fill="#1b220e">Hộ thu nhập thấp</text>
+<rect x="270" y="85" width="180" height="80" rx="16" fill="#7A8B3E"/><text x="360" y="120" font-weight="800" font-size="16" fill="#fff">MoMo</text><text x="360" y="142" font-size="12" fill="#fff">Mini app, ví, e-KYC</text>
+<rect x="540" y="85" width="160" height="80" rx="16" fill="#2F3A14"/><text x="620" y="120" font-weight="800" font-size="16" fill="#fff">CEP</text><text x="620" y="142" font-size="12" fill="#fff">Tín dụng, tiết kiệm</text>
+<rect x="270" y="190" width="180" height="46" rx="12" fill="none" stroke="#7A8B3E" stroke-width="2.5"/><text x="360" y="218" font-size="13" fill="#5E6F2A" font-weight="600">Doanh nghiệp bảo hiểm</text><path d="M360 165V190" stroke="#7A8B3E" stroke-width="3"/></g></svg></div>
+<br><div class="g"><details class="c"><summary><h3>Vai trò của từng bên</h3></summary><dl><dt>CEP</dt><dd>Giữ giấy phép tín dụng, nhận tiền gửi; thẩm định, phê duyệt, thu hồi nợ; cán bộ cộng đồng</dd><dt>MoMo</dt><dd>Mini app CEP, ví và thanh toán, e-KYC, thông báo và theo dõi hợp đồng</dd><dt>Bảo hiểm</dt><dd>Thiết kế, bán, chi trả bảo hiểm vào ví khách hàng</dd></dl></details>
+<details class="c"><summary><h3>Vì sao chọn đối tác chiến lược</h3></summary><dl><dt>Đối tác chiến lược</dt><dd>Chọn: mỗi bên đúng giấy phép, triển khai nhanh, hợp đồng phân vai và dữ liệu rõ ràng</dd><dt>Liên doanh</dt><dd>Gắn kết dài hạn nhưng vốn, thủ tục và giấy phép phức tạp</dd><dt>Đại lý kỹ thuật</dt><dd>Đơn giản nhưng fintech chỉ là kênh, ít cùng thiết kế sản phẩm</dd></dl></details>
+<details class="c"><summary><h3>Quy trình e-KYC</h3></summary><dl><dt>Bước 1</dt><dd>Mở mini app CEP, dùng lại định danh ví MoMo</dd><dt>Bước 2</dt><dd>Quét CCCD gắn chip</dd><dt>Bước 3</dt><dd>Xác thực khuôn mặt</dd><dt>Bước 4</dt><dd>Đồng ý riêng từng mục đích dữ liệu</dd><dt>Bước 5</dt><dd>CEP xét duyệt; cán bộ hỗ trợ tại nhà</dd></dl></details>
+<details class="c"><summary><h3>Giá trị mang lại</h3></summary><dl><dt>Khách hàng</dt><dd>Vốn đúng lúc, lịch trả theo thu nhập, được bảo vệ rủi ro</dd><dt>CEP</dt><dd>Mở rộng khách hàng nông thôn</dd><dt>MoMo</dt><dd>Mở rộng thanh toán số tới nông nghiệp</dd><dt>Cộng đồng</dt><dd>Ổn định sinh kế, hạn chế tín dụng đen</dd></dl></details></div>
+<p class="n">Tỷ lệ chia sẻ phí và hoa hồng do các bên thỏa thuận trong hợp đồng hợp tác.</p></div></section></div>
+
+<div class="v" id="lien-he"><div class="ph"><div class="w"><h1>Liên hệ</h1><p>Chọn kênh thuận tiện nhất với bạn.</p></div></div>
+<section class="s"><div class="w"><div class="g"><div class="c"><div class="bd">📱</div><h3>Mini app CEP trên MoMo</h3><p>Đăng ký, theo dõi dư nợ, thanh toán.</p></div><div class="c"><div class="bd">🤝</div><h3>Cán bộ cộng đồng</h3><p>Tư vấn, hỗ trợ hồ sơ tại địa phương.</p></div><div class="c"><div class="bd">🏢</div><h3>Điểm giao dịch CEP</h3><p>Giao dịch trực tiếp, trả nợ tiền mặt.</p></div></div></div></section></div>
+
+<footer><div class="w"><div class="fg"><div><h4>🌱 Gieo mầm số</h4><p>Dự án tài chính vi mô số tại miền Nam Việt Nam, hợp tác giữa CEP và MoMo.</p></div><div><h4>Dịch vụ</h4><div id="fs"></div></div><div><h4>Chính sách và pháp lý</h4><button data-p="priv">Bảo vệ dữ liệu cá nhân</button><button data-p="legal">Cơ sở pháp lý hoạt động</button><button data-p="cons">Bảo vệ người tiêu dùng</button><button data-p="risk">Quản trị rủi ro</button><button data-p="disc">Lưu ý về số liệu</button></div></div><div class="fb">Dự án học phần Lý thuyết tài chính tiền tệ. Số liệu tham chiếu từ CEP và PVI; phần còn lại là đề xuất của mô hình.</div></div></footer>
+<dialog id="dg"><button class="x" aria-label="Đóng" onclick="dg.close()">×</button><div id="dgc"></div></dialog>
+<script>
+var $=function(i){return document.getElementById(i)};
+var P=function(t,k,c,r){return{t:t,k:k,c:c,r:r}};
+var S=[
+{n:"Lao động nông thôn",e:"🌾",d:"Vay vốn sinh kế nhóm, bảo hiểm tai nạn",p:[
+P("Vay vốn sinh kế nhóm","Vay",["Đến 100 triệu","0,4–0,65%/tháng","Đến 24 tháng"],[["Mục đích","Giống, thức ăn chăn nuôi, vật tư, vốn buôn bán nhỏ"],["Hạn mức","50 triệu/cá nhân; 100 triệu/hộ nghèo, cận nghèo"],["Hình thức","Tín chấp qua tổ 5–60 thành viên, có tiết kiệm bắt buộc"],["Trả nợ","Theo kỳ họp cụm, qua ví MoMo"]]),
+P("Bảo hiểm tai nạn và tín dụng","Bảo hiểm",["Từ 67.500đ/năm","Đến 70 tuổi","Hiệu lực 1 năm"],[["Phí (tham chiếu PVI)","67.500 / 112.500 / 225.000đ/năm cho gói 30 / 50 / 100 triệu"],["Chi trả","Tử vong, mất tích 100%; thương tật theo tỷ lệ; chi phí y tế; trợ cấp nằm viện 0,1%/ngày, tối đa 60 ngày"]])]},
+{n:"Tiểu thương chợ",e:"🏪",d:"Vay xoay vòng, tiết kiệm từ doanh thu QR",p:[
+P("Vay xoay vòng nhập hàng","Vay",["Đến 50 triệu","0,4–0,65%/tháng","Theo đợt nhập"],[["Mục đích","Vốn ngắn hạn theo từng đợt nhập hàng"],["Hình thức","Qua tổ vay vốn 5–60 thành viên"],["Trả nợ","Theo dòng tiền QR"]]),
+P("Tiết kiệm tự động từ QR","Tiết kiệm",["Từ 100.000đ","4–6%/năm"],[["Cách hoạt động","Tiền QR về ví MoMo, tự chuyển sang tiết kiệm tại CEP"],["Lãi suất","4–6%/năm tùy kỳ hạn"],["Rút","Theo điều kiện sản phẩm tiền gửi"]])]},
+{n:"Công nhân nhập cư",e:"🏭",d:"Tích lũy, bảo hiểm sức khỏe, vay khẩn cấp",p:[
+P("Tích lũy mục tiêu","Tiết kiệm",["Từ 20.000đ/lần","3,6%/năm"],[["Mục đích","Học phí cho con, quỹ dự phòng, dịp đặc biệt"],["Lãi suất","0,3%/tháng, gửi linh hoạt"],["Cách gửi","Tự trích theo kỳ nhận lương"]]),
+P("Bảo hiểm sức khỏe cơ bản","Bảo hiểm",["Từ 50.000đ/tháng","12 tháng"],[["Thời hạn","12 tháng, gia hạn khi hết hợp đồng"],["Bồi thường","Tải hồ sơ y tế lên mini app"]]),
+P("Vay khẩn cấp","Vay",["Đến 15 triệu","0,5%/tháng","Đến 12 tháng"],[["Mục đích","Chi phí đột xuất: viện phí, thuê nhà"],["Xét duyệt","Online, theo thu nhập và lịch sử tín dụng, không thế chấp"],["Trả nợ","Theo chu kỳ lương"]])]},
+{n:"Nông hộ mùa vụ",e:"🌱",d:"AgriFlex vay mùa vụ, AgriShield bảo hiểm thời tiết",p:[
+P("AgriFlex: vay vật tư mùa vụ","Vay",["10–50 triệu","0,72%/tháng","3–12 tháng"],[["Mục đích","Giống, phân bón, thuốc BVTV, thức ăn thủy sản"],["Lãi suất","Tham chiếu tín dụng mùa vụ CEP từ 1/4/2026"],["Hình thức","Tín chấp, vay cá nhân hoặc nhóm tương trợ"],["Trả nợ","Lãi theo kỳ; gốc chủ yếu sau thu hoạch"]]),
+P("AgriShield: bảo hiểm thời tiết","Bảo hiểm",["Mặn, hạn, ngập","Chi trả theo chỉ số"],[["Rủi ro","Xâm nhập mặn (độ mặn), hạn hán (lượng mưa), ngập lụt (mực nước)"],["Chi trả","Chỉ số vượt ngưỡng hợp đồng thì chi trả vào ví MoMo, không giám định từng hộ"],["Phí","Theo gói, công bố trước trong hợp đồng"],["Lưu ý","Có thể lệch giữa chỉ số và thiệt hại thực tế (basis risk)"]])]}];
+var POL={priv:["Bảo vệ dữ liệu cá nhân","<p>Căn cứ Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15 và Nghị định 356/2025/NĐ-CP (hiệu lực 1/1/2026).</p><ul><li>Đồng ý riêng cho từng mục đích xử lý dữ liệu.</li><li>Khách hàng được biết, rút đồng ý, yêu cầu xóa dữ liệu.</li><li>CEP và MoMo phân vai bên kiểm soát và bên xử lý bằng hợp đồng.</li><li>Mã hóa dữ liệu sinh trắc học; thông báo khi xảy ra lộ lọt dữ liệu.</li></ul>"],
+legal:["Cơ sở pháp lý hoạt động","<ul><li>Luật Các tổ chức tín dụng 2024 và Thông tư 33 về tài chính vi mô: cho vay bằng VND để tạo thu nhập; CEP là bên cho vay, MoMo là kênh.</li><li>Điều 15 Luật Các tổ chức tín dụng 2024 và Luật Kinh doanh bảo hiểm: bảo hiểm hoàn toàn tự nguyện, không là điều kiện giải ngân.</li><li>Quy định của Ngân hàng Nhà nước về xác thực khách hàng, ví điện tử, phòng chống rửa tiền: CCCD gắn chip kết hợp khuôn mặt, giám sát giao dịch bất thường.</li></ul>"],
+cons:["Bảo vệ người tiêu dùng","<p>Căn cứ Luật Bảo vệ quyền lợi người tiêu dùng 2023.</p><ul><li>Công khai lãi suất, phí trước khi ký hợp đồng.</li><li>Không ép mua bảo hiểm cùng khoản vay.</li><li>Hạn mức xác định theo thu nhập và chu kỳ sản xuất.</li></ul>"],
+risk:["Quản trị rủi ro","<ul><li>Vay quá khả năng: hạn mức theo thu nhập, vay nhóm có tiết kiệm bắt buộc.</li><li>Hạn chế hiểu biết số: cán bộ cộng đồng hướng dẫn trực tiếp.</li><li>Sai lệch chỉ số bảo hiểm: chọn trạm đo đại diện, công bố ngưỡng trong hợp đồng.</li></ul>"],
+disc:["Lưu ý về số liệu","<p>Lãi suất và phí là số tham chiếu từ CEP, PVI hoặc thông số giả định để thiết kế mô hình, không phải điều kiện chính thức.</p>"]};
+var cur=0,V=["trang-chu","dich-vu","mo-hinh","lien-he"];
+var lk=function(i){return'<a href="#dich-vu" data-i="'+i+'">'+S[i].n+'</a>'};
+$("nav").innerHTML='<ul><li><a href="#trang-chu">Trang chủ</a></li><li><a href="#dich-vu">Dịch vụ ▾</a><ul class="dd">'+S.map(function(s,i){return'<li>'+lk(i)+'</li>'}).join("")+'</ul></li><li><a href="#mo-hinh">Về Gieo mầm số ▾</a><ul class="dd"><li><a href="#mo-hinh">Mô hình hợp tác</a></li><li><a href="#mo-hinh">Quy trình e-KYC</a></li></ul></li><li><a href="#lien-he">Liên hệ</a></li></ul>';
+$("fs").innerHTML=S.map(function(s,i){return lk(i)}).join("");
+$("seg").innerHTML=S.map(function(s,i){return'<a class="c" href="#dich-vu" data-i="'+i+'"><div class="bd">'+s.e+'</div><h3>'+s.n+'</h3><p>'+s.d+'</p></a>'}).join("");
+document.body.addEventListener("click",function(e){var a=e.target.closest("a[data-i]");if(a){cur=+a.dataset.i;draw();$("nav").classList.remove("o")}var b=e.target.closest("[data-p]");if(b){$("dgc").innerHTML="<h3>"+POL[b.dataset.p][0]+"</h3>"+POL[b.dataset.p][1];$("dg").showModal()}if(e.target.closest("nav a")&&!e.target.closest("nav a").dataset.i)$("nav").classList.remove("o")});
+$("mb").onclick=function(){$("nav").classList.toggle("o")};
+function draw(){$("tabs").innerHTML=S.map(function(s,i){return'<button class="'+(i==cur?"on":"")+'" data-t="'+i+'">'+s.n+'</button>'}).join("");
+$("prod").innerHTML=S[cur].p.map(function(p){return'<details class="c"><summary><span class="k">'+p.k+'</span><h3>'+p.t+'</h3><div class="ch">'+p.c.map(function(x){return'<em>'+x+'</em>'}).join("")+'</div></summary><dl>'+p.r.map(function(r){return'<dt>'+r[0]+'</dt><dd>'+r[1]+'</dd>'}).join("")+'</dl></details>'}).join("");
+$("note").textContent=cur==3?"AgriFlex và AgriShield là hai hợp đồng riêng; tiền bồi thường không tự động dùng để tất toán khoản vay.":""}
+$("tabs").onclick=function(e){if(e.target.dataset.t){cur=+e.target.dataset.t;draw()}};
+function route(){var h=location.hash.slice(1);if(V.indexOf(h)<0)h=V[0];V.forEach(function(v){$(v).classList.toggle("on",v==h)});document.querySelectorAll("nav>ul>li>a").forEach(function(a){a.classList.toggle("on",a.getAttribute("href")=="#"+h)});scrollTo(0,0)}
+addEventListener("hashchange",route);draw();route();
+</script></body></html>
